@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>PIBASE.ligands by fredpdavis</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>PIBASE.ligands</h1>
+        <p>the overlap of small molecule and protein binding sites within protein families</p>
+
+        <p class="view"><a href="https://github.com/fredpdavis/pibase.ligands">View the Project on GitHub <small>fredpdavis/pibase.ligands</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/fredpdavis/pibase.ligands/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/fredpdavis/pibase.ligands/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/fredpdavis/pibase.ligands">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="what-is-pibaseligands" class="anchor" href="#what-is-pibaseligands" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is PIBASE.ligands?</h2>
+
+<p>PIBASE.ligands is a resource for analyzing the spatial overlap of protein-protein and protein-ligand interfaces on protein structures. It combines binding site information from PIBASE and LIGBASE with SCOP-based ASTRAL alignments of protein domain families.</p>
+
+<p>The last release (v200905) uses protein structures from PDB (March 2008), domain definitions from SCOP (1.73), ligand binding sites from LIGBASE (200806), and protein binding sites fro, PIBASE (v2008).</p>
+
+<p><strong>NOTE: The PIBASE.ligands server was retired August 2015. The code is maintained here for archiving</strong>
+A mysql dump of the database is available at Zenodo: <a href="https://zenodo.org/record/29588">https://zenodo.org/record/29588</a></p>
+
+<h2>
+<a id="searching-pibaseligands" class="anchor" href="#searching-pibaseligands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Searching PIBASE.ligands</h2>
+
+<p>The web interface enables integrated queries of protein interfaces (domain-domain and domain-peptide), ligand binding sites, and their overlap. More sophisticated searches can be done by downloading the database and querying it locally with MySQL.
+The goal of this interface is to allow identification of ligand binding sites that overlap with a protein interface upon alignment. In addition to the domain-domain interfaces stored in PIBASE, the PIBASE.ligands exentesion also stores domain-peptide interfaces and domain-ligand interfaces. Once you have found a protein interface of interest, you can query the database to identify ligand binding sites that overlap after alignment; Or vice versa, once you find a ligand binding site of interest, you can query the database for protein interfaces that overlap with the binding site upon alignment. The overlap can be visualized by sequence alignment or in three-dimensions using a RasMol script.</p>
+
+<h3>
+<a id="citing-pibaseligands" class="anchor" href="#citing-pibaseligands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Citing PIBASE.ligands</h3>
+
+<p>The overlap of small molecule and protein binding sites within families of protein structures.<br>
+Davis FP, Sali A. PLoS Comput Biology 2010 6(2): e1000668.
+<a href="http://dx.doi.org/10.1371/journal.pcbi.1000668">http://dx.doi.org/10.1371/journal.pcbi.1000668</a></p>
+
+<p>The original PIBASE database is described here:<br>
+PIBASE: a comprehensive database of structurally defined protein interfaces.<br>
+Davis FP, Sali A. Bioinformatics 2005. (21) 9: 1901-7.<br>
+<a href="http://dx.doi.org/10.1093/bioinformatics/bti277">http://dx.doi.org/10.1093/bioinformatics/bti277</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/fredpdavis">fredpdavis</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
