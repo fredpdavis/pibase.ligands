@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Introduction - PIBASE.ligands</title>
+<LINK title="marcius style" media=screen href="style/styles.css" type=text/css rel=StyleSheet>
+<LINK REL="SHORTCUT ICON" HREF="figs/pilig.ico">
+</head>
+
+<DIV class=bodytext>
+<table width=65% align="center" border="0" width=100%>
+<tr>
+<td valign="center" align="right">
+<IMG height=50 width=50 SRC="figs/pilig_web_logo.png" BORDER=0>
+</td>
+<td align="left">
+<a href="ligands_queries.html">Queries</a> <a href="ligands_queries_detailed.html">(detailed)</a> |
+<B>Introduction</B> |
+<a href="ligands_download.html">Download</a> |
+<a href="http://research.janelia.org/davis/projects.html">related work</a>
+</td>
+</tr>
+<tr><td colspan="2"><DIV class=large><B>PIBASE.ligands</B></DIV></td></tr>
+</table>
+</DIV>
+<br>
+
+
+<table width=75% align=center>
+
+<td>
+
+<DIV class=large><B>PIBASE.ligands: Overlapping small molecule and protein binding sites</B></DIV>
+
+<p><DIV class=large><B>What is PIBASE.ligands?</B></DIV>
+
+<DIV class=bodytext>
+PIBASE.ligands is a resource for analyzing the spatial overlap of protein-protein and protein-ligand interfaces on protein structures. It combines binding site information from <a href="http://pibase.janelia.org">PIBASE</a> and <a href="http://salilab.org/ligbase">LIGBASE</a> with <a href="http://scop.mrc-lmb.cam.ac.uk/scop/">SCOP</a>-based <a href="http://astral.berkeley.edu/">ASTRAL</a> alignments of protein domain families. The database schema is available <a href="files/pibase_schema_v200905.pdf">here</a>. PIBASE is developed at <a href="http://pibase.janelia.org">http://pibase.janelia.org</a>, with a mirror maintained at <a href="http://salilab.org/pibase">http://salilab.org/pibase</a>.
+</DIV>
+
+<p><DIV class=large><B>Data Sources</B></DIV>
+<p>
+<table frame=hsides>
+<tr><th><DIV class=bodytext>database</DIV></th><th><DIV class=bodytext>version</DIV></th><th><DIV class=bodytext>data type</DIV></th><tr>
+<tr><td><DIV class=bodytext><a href="http://www.rcsb.org/pdb">PDB</a></DIV></td><td><DIV class=bodytext>March 2008</DIV></td><td><DIV class=bodytext>protein structures</DIV></td></tr>
+<tr><td><DIV class=bodytext><a href="http://scop.mrc-lmb.cam.ac.uk/scop/">SCOP</a></DIV></td><td><DIV class=bodytext>1.73</DIV></td><td><DIV class=bodytext>domain definitions, classification</DIV></td></tr>
+<tr><td><DIV class=bodytext><a href="http://salilab.org/ligbase">LIGBASE</a></DIV></td><td><DIV class=bodytext>200806</DIV></td><td><DIV class=bodytext>ligand binding sites</DIV></td></tr>
+</table>
+
+
+<p><DIV class=large><B>Searching PIBASE.ligands</B></DIV>
+<DIV class=bodytext>
+This web interface enables integrated queries of protein interfaces (domain-domain and domain-peptide), ligand binding sites, and their overlap. More sophisticated searches can be done by <a href="http://pibase.janelia.org/ligands_download.html">downloading the database</a> and querying it locally with MySQL.<p>
+
+The goal of this interface is to allow identification of ligand binding sites that overlap with a protein interface upon alignment. In addition to the domain-domain interfaces stored in PIBASE, the PIBASE.ligands exentesion also stores domain-peptide interfaces and domain-ligand interfaces. Once you have found a protein interface of interest, you can query the database to identify ligand binding sites that overlap after alignment; Or vice versa, once you find a ligand binding site of interest, you can query the database for protein interfaces that overlap with the binding site upon alignment. The overlap can be visualized by sequence alignment or in three-dimensions using a RasMol script (see below).<br>
+</DIV>
+
+<p><DIV class=large><B>External Software</B></DIV>
+
+<DIV class=bodytext>
+<a href="http://openrasmol.org/OpenRasMol.html#Software">Rasmol</a> scripts are provided for viewing the interfaces and their overlaps. This <a href="rasscript.sh">script</a> can be used as a rasmol script viewer (in UNIX). The rasmol scripts may also be run on windows machines using "raswin.exe -script <i>scriptname</i>". For help on setting up rasmol as a browser helper please follow <a href="http://www.ebi.ac.uk/thornton-srv/databases/cgi-bin/pdbsum/GetPage.pl?doc=TRUE&pdbcode=n/a&template=doc_viewers.html">this external link</a>.
+</DIV>
+
+
+<p><DIV class=large><B>Citing PIBASE.ligands</B></DIV>
+<DIV class=bodytext>
+The overlap of small molecule and protein binding sites within families of protein structures.<br>Davis FP, Sali A. <i>Manuscript submitted</i>, 2009.
+<p>
+
+The original PIBASE database is described here:<br>PIBASE: a comprehensive database of structurally defined protein interfaces.<br>Davis FP, Sali A. Bioinformatics 2005. (21) 9: 1901-7.<a href="http://dx.doi.org/10.1093/bioinformatics/bti277">link</a>
+</DIV>
+
+</td>
+</table>
+
+<DIV class=bodytext><a href="http://research.janelia.org/davis">davisf</a> at <a href ="http://hhmi.org/janelia">janelia</a> dot hhmi dot org</strong></DIV>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<html>
+<head>
+<title>Detailed Queries - PIBASE.ligands</title>
+<LINK title="marcius style" media=screen href="style/styles.css" type=text/css rel=StyleSheet>
+<LINK REL="SHORTCUT ICON" HREF="figs/pilig.ico">
+</head>
+
+<DIV class=bodytext>
+<table width=65% align="center" border="0" width=100%>
+<tr>
+<td valign="top" align="right">
+<IMG height=50 width=50 SRC="figs/pilig_web_logo.png" BORDER=0>
+<!--<DIV class=large><B>PIBASE.ligands</B></DIV>-->
+</td>
+<td>
+<a href="ligands_queries.html">Queries</a> <B>(detailed)</B> |
+<a href="ligands_introduction.html">Introduction</a> |
+<a href="ligands_download.html">Download</a> |
+<a href="http://research.janelia.org/davis/projects.html">related work</a>
+</td>
+</tr>
+<tr><td colspan="2"><DIV class=large><B>PIBASE.ligands</B></DIV></td></tr>
+</table>
+</DIV>
+
+<table width=75% align="center">
+<td>
+<p>
+<DIV class=large>
+<br>
+<hr>
+
+
+<form action="/cgi-bin/ligands_find.pl" method="get" name="find_object">
+<DIV class=bodytext>
+<B>Search for:</B>
+<table><tr><td><div class=bodytext>
+<b><i>Individual</i></b> <input type="radio" name="object_type" value="complexes">complexes
+<input type="radio" name="object_type" value="domains">domains<br>
+<input type="radio" name="object_type" value="interfaces" checked>domain interfaces
+<input type="radio" name="object_type" value="dompep">domain-peptide interfaces
+<input type="radio" name="object_type" value="ligbs">ligand binding sites<br>
+<b><i>Overlapping pairs</i></b> of ligand binding sites and <input type="radio" name="object_type" value="overlap_pi_lig">domain interfaces
+<input type="radio" name="object_type" value="overlap_pep_lig">domain-peptide interfaces<br>
+<input type="reset"><input type="submit" value="Search" align="middle"><br>
+</div></td></tr></table>
+<input type="checkbox" name="view_query_only" value="yes">view SQL query only (doesn't run the query)<br>
+</DIV>
+<p>
+
+<DIV class=bodytext><B>That meet the following criteria:</B> specify as much as you'd like.</DIV>
+<DIV class=bodytext><B>* Complex properties</B></DIV>
+<DIV class=bodytext>
+bdp_id: <input type="text" value="" name="complex_bdp_id" align="top" maxlength="6" size="6"> PDB code: <input type="text" value="" name="complex_pdb_id" align="top" maxlength="5" size="5"> Resolution: &le; <input type="text" value="" name="complex_resolution" align="top" maxlength="4" size="4"> &#8491;<p>
+PDB keyword: <input type="text" value="" name="complex_pdb_keyword" align="top" maxlength="30" size="30"><p>
+Topology fingerprint: <input type="text" value="" name="complex_topology" align="top" maxlength="50" size="20"> <input type="checkbox" name="complex_domain_type" value="1">SCOP<input type="checkbox" name="complex_domain_type" value="2">CATH<input type="checkbox" name="complex_domain_type" value="3">chain (select one)
+<p>
+
+Number of domains: <select name="complex_num_domains_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="complex_num_domains" align="top" maxlength="3" size="3">
+
+Number of interfaces: <select name="complex_num_interfaces_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="complex_num_interfaces" align="top" maxlength="3" size="3">
+
+<p>
+<DIV class=bodytext><B>* Domain-domain Interface properties</B></DIV>
+
+<DIV class=bodytext>
+Domain subset_id 1: <input type="text" value="" name="interface_subset_id_1" align="top" maxlength="30" size="15"> subset_id 2: <input type="text" value="" name="interface_subset_id_2" align="top" maxlength="30" size="15"> <br>
+Domain type: <input type="checkbox" name="interface_domain_type" value="1">SCOP<input type="checkbox" name="interface_domain_type" value="2">CATH<input type="checkbox" name="interface_domain_type" value="3">chain (select one)<br>
+Domain class 1: <input type="text" value="" name="interface_class_1" align="top" maxlength="11" size="11"> class 2: <input type="text" value="" name="interface_class_2" align="top" maxlength="11" size="11"><br>
+The two components should be on the <input type="checkbox" name="interface_chains" value="same">same, <input type="checkbox" name="interface_chains" value="diff">different chains (select one)<br>
+
+<p>
+<DIV class=bodytext>
+Number of inter-domain contacts (at 6.05 &#8491;): <select name="interface_num_contacts_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="interface_num_contacts" align="top" maxlength="7" size="7"><br>
+
+Number of residues: <select name="interface_numres_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="interface_numres" align="top" maxlength="7" size="7"><br>
+
+Buried solvent accessible surface area (SASA): <select name="interface_dsasa_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="interface_dsasa" align="top" maxlength="7" size="7"> &#8491;&sup2;<br>
+
+Percent of buried SASA that is polar: <select name="interface_perc_dsasa_polar_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="interface_perc_dsasa_polar" align="top" maxlength="7" size="7">%<br>
+<p>
+
+Percent of interface that is unstructured: <select name="interface_perc_loop_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="interface_perc_loop" align="top" maxlength="7" size="7"> %<br>
+
+Percent of interface that is alpha helical: <select name="interface_perc_helix_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="interface_helix_loop" align="top" maxlength="7" size="7"> %<br>
+
+Percent of interface that is beta stranded: <select name="interface_perc_strand_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="interface_strand_loop" align="top" maxlength="7" size="7"> %<br>
+</DIV>
+
+<DIV class=bodytext><B>* Domain-peptide interface properties</B></DIV>
+
+Number of interface residues: <select name="dompep_numres_bs_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="dompep_numres_bs" align="top" maxlength="7" size="7"><br>
+
+Peptide length: <select name="dompep_chain_length_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="dompep_chain_length" align="top" maxlength="7" size="7"><br>
+
+</DIV>
+
+<p>
+<DIV class=bodytext><B>* Domain properties</B></DIV>
+<DIV class=bodytext> <p>
+subset_id: <input type="text" value="" name="domain_subset_id" align="top" maxlength="30" size="20"><br>
+type: <input type="checkbox" name="domain_type" value="1">SCOP<input type="checkbox" name="domain_type" value="2">CATH<input type="checkbox" name="domain_type" value="3">chain (select one)<br>
+class: <input type="text" value="" name="domain_class" align="top" maxlength="11" size="11">
+</DIV>
+</form>
+
+<DIV class=bodytext><B>* Ligand properties</B></DIV>
+<DIV class=bodytext>
+HETGROUP code: <input type="text" value="" name="ligbs_ligcode" align="top" maxlength="3" size="3">
+<!--PDB code: <input type="text" value="" name="ligbs_pdb_id" align="top" maxlength="5" size="5">--> <p>
+Molecular weight: <select name="ligbs_mw_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="ligbs_mw" align="top" maxlength="3" size="3">
+<p>
+
+Number of atoms: <select name="ligbs_num_atoms_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="ligbs_num_atoms" align="top" maxlength="3" size="3">
+<br>
+
+Number of non-H atoms: <select name="ligbs_num_atoms_nonh_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="ligbs_num_atoms_nonh" align="top" maxlength="3" size="3">
+<p>
+Number of binding site residues: <select name="ligbs_numres_bs_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="ligbs_numres_bs" align="top" maxlength="7" size="7"><br>
+</DIV>
+
+<hr>
+<h3><i>Overlap</i></h3>
+<DIV class=bodytext><B>* Overlapping domain-domain and ligand binding site properties:</B></DIV>
+Percent of protein binding site covered by ligand binding site: <select name="overlap_pi_lig_lp_vs_p_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pi_lig_lp_vs_p" align="top" maxlength="3" size="3"><br>
+
+Percent of ligand binding site that overlaps the protein binding site: <select name="overlap_pi_lig_lp_vs_l_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pi_lig_lp_vs_l" align="top" maxlength="3" size="3">
+<p>
+
+<DIV class=bodytext>
+Ligand binding site sequence identity: <select name="overlap_pi_lig_l_seqident_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pi_lig_l_seqident" align="top" maxlength="3" size="3"><br>
+
+Protein binding site sequence identity: <select name="overlap_pi_lig_p_seqident_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pi_lig_p_seqident" align="top" maxlength="3" size="3"><br>
+
+Overlapping residue sequence identity: <select name="overlap_pi_lig_lp_seqident_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pi_lig_lp_seqident" align="top" maxlength="3" size="3">
+<p>
+
+</DIV>
+
+<DIV class=bodytext><B>* Overlapping domain-peptide and ligand binding site properties:</B></DIV>
+Percent of protein binding site covered by ligand binding site: <select name="overlap_pep_lig_lp_vs_p_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pep_lig_lp_vs_p" align="top" maxlength="3" size="3"><br>
+
+Percent of ligand binding site that overlaps the protein binding site: <select name="overlap_pep_lig_lp_vs_l_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pep_lig_lp_vs_l" align="top" maxlength="3" size="3">
+<p>
+
+<DIV class=bodytext>
+Ligand binding site sequence identity: <select name="overlap_pep_lig_l_seqident_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pep_lig_l_seqident" align="top" maxlength="3" size="3"><br>
+
+Protein binding site sequence identity: <select name="overlap_pep_lig_p_seqident_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pep_lig_p_seqident" align="top" maxlength="3" size="3"><br>
+
+Overlapping residue sequence identity: <select name="overlap_pep_lig_lp_seqident_operator">
+<option value=">=" selected>&ge;</option>
+<option value="=">=</option>
+<option value="<=">&le;</option>
+</select>
+<input type="text" value="" name="overlap_pep_lig_lp_seqident" align="top" maxlength="3" size="3">
+<p>
+
+</DIV>
+
+<hr>
+
+</td>
+</table>
+
+<br>
+<DIV class=bodytext><a href="http://research.janelia.org/davis">davisf</a> at <a href ="http://hhmi.org/janelia">janelia</a> dot hhmi dot org</strong></DIV>
+</body>
+</html>
